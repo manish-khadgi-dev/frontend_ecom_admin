@@ -1,12 +1,20 @@
 import "./App.css";
-import { Button } from "react-bootstrap";
+
+import { BrowserRouter as Browser, Routes, Route } from "react-router-dom";
+import Registration from "./pages/register/Registration";
+import LoginPage from "./pages/login/LoginPage";
+import EmailVerify from "./pages/verify/EmailVerify";
 
 function App() {
   return (
-    <div className="App">
-      <Button>
-        Hi Muls <i class="fa-solid fa-hippo"></i>
-      </Button>
+    <div className="">
+      <Browser>
+        <Routes>
+          <Route path="/" element={<LoginPage />} />
+          <Route path="register" element={<Registration />} />
+          <Route path="/verify" element={<EmailVerify />} />
+        </Routes>
+      </Browser>
     </div>
   );
 }
